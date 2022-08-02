@@ -14,6 +14,11 @@ import {
   faExpandArrowsAlt,
   faMicrophoneSlash
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDiscord,
+  faTwitter,
+  faInstagram
+} from "@fortawesome/free-brands-svg-icons";
 
 
 import getConfig from './config'
@@ -90,7 +95,7 @@ export default function App() {
     // unityContext.on("RotationDidUpdate", handleOnUnityRotationDidUpdate);
     // unityContext.on("ClickedPosition", handleOnUnityClickedPosition);
     // unityContext.on("Say", handleOnUnitySayMessage);
-  // When the component is unmounted, we'll unregister the event listener.
+    // When the component is unmounted, we'll unregister the event listener.
     return function () {
       unityContext.removeAllEventListeners();
     };
@@ -160,16 +165,32 @@ export default function App() {
   // if not signed in, return early with sign-in prompt
   if (!window.walletConnection.isSignedIn()) {
     return (
-      <main>
+
+      <div className='wrapper'>
+
+        <div className='header row'>
+          <a href='https://linktr.ee/ambermetaverse' className='about_btn' target="_blank">About</a>
+        </div>
 
         <img className='logo' src={Logo}></img>
-
         <p className='description'>Free to play NFT-game</p>
-
         <p style={{ textAlign: 'center', marginTop: '2.5em' }}>
-          <button onClick={login}>Login with Near</button>
+          <button onClick={login}>Login with NEAR</button>
         </p>
-      </main>
+        <a href='https://amber.top' target="_blank"><small>Mint your NFT</small></a>
+
+        <div className='footer'>
+          <p target="_blank" >Join Us</p>
+          <div className='social-links'>
+            <a href='https://twitter.com/AMBER_metaverse'><FontAwesomeIcon icon={faTwitter} /></a>
+            <a href='https://discord.gg/5ze32SFmmS'><FontAwesomeIcon icon={faDiscord} /></a>
+            <a href=''><FontAwesomeIcon icon={faInstagram} /></a>
+          </div>
+          <small className='copywriter'>© 2022 HustleStacks OÜ - All Rights Reserved.</small>
+        </div>
+
+      </div>
+
     )
   }
 
@@ -231,14 +252,19 @@ export default function App() {
               <button onClick={sendWalletIdToGame}>
                 Send wallet id to game
               </button> */}
-              <div className='footer'>
-                <button className='btn_voice'>
-                  <FontAwesomeIcon icon={faMicrophoneSlash} />
-                </button>
-                &nbsp;&nbsp;&nbsp;
-                <button className='btn_expand' onClick={handle.enter}>
-                  <FontAwesomeIcon icon={faExpandArrowsAlt} />
-                </button>
+              <div className='game_footer'>
+                <div className='game_version'>
+                  <p>Alpha 0.1</p>
+                </div>
+                <div className='features'>
+                  <button className='btn_voice'>
+                    <FontAwesomeIcon icon={faMicrophoneSlash} />
+                  </button>
+                  &nbsp;&nbsp;&nbsp;
+                  <button className='btn_expand' onClick={handle.enter}>
+                    <FontAwesomeIcon icon={faExpandArrowsAlt} />
+                  </button>
+                </div>
               </div>
             </Fragment>
 

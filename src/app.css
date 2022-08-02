@@ -1,6 +1,7 @@
 .wrapper {
   width: 100%;
-  max-width: 1100px;
+  height: 95vh;
+  max-width: 1400px;
   text-align: center;
   margin: 0 auto;
 }
@@ -59,19 +60,27 @@
 .header {
   height: 50px;
 }
+
 .header .logo {
   width: 153px;
   height: 32.5px;
   float: left;
   margin: 0px;
 }
+
 .header button {
   float: right;
 }
-.footer {
-  margin-top: 10px;
-  padding-right: 20px;
-  float: right;
+
+.game_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game_footer .game_version p {
+  color: #fff;
+  font-size: 18px;
 }
 
 .logo {
@@ -84,11 +93,41 @@
   color: #FFFFFF;
 }
 
-.btn_voice , .btn_expand {
+.btn_voice,
+.btn_expand {
   height: 38px;
   width: 38px;
-  padding: 8px ;
+  padding: 8px;
   border-radius: 50%;
   background-color: #05A3FF;
   color: #efefef;
+}
+
+.header .about_btn {
+  float: right;
+}
+
+.footer {
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.social-links {
+  margin: 20px 0 30px 0;
+}
+
+.social-links a {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.copywriter {
+  font-size: 14px;
+  font-weight: 400;
+  color: #FFD4CB;
 }
